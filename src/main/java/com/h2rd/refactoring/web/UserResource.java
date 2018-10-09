@@ -18,9 +18,9 @@ import java.util.List;
 @Repository
 public class UserResource{
 
-    public UserDao userDao;
+    private UserDao userDao;
 
-    @GET
+    @POST
     @Path("add/")
     public Response addUser(@QueryParam("name") String name,
                             @QueryParam("email") String email,
@@ -39,7 +39,7 @@ public class UserResource{
         return Response.ok().entity(user).build();
     }
 
-    @GET
+    @PUT
     @Path("update/")
     public Response updateUser(@QueryParam("name") String name,
                                @QueryParam("email") String email,
@@ -58,7 +58,7 @@ public class UserResource{
         return Response.ok().entity(user).build();
     }
 
-    @GET
+    @DELETE
     @Path("delete/")
     public Response deleteUser(@QueryParam("name") String name,
                                @QueryParam("email") String email,
@@ -95,13 +95,13 @@ public class UserResource{
 
     @GET
     @Path("search/")
-    public Response findUser(@QueryParam("name") String name) {
+    public Response findUser(@QueryParam("email") String email) {
 
         if (userDao == null) {
             userDao = UserDao.getUserDao();
         }
 
-        User user = userDao.findUser(name);
+        User user = userDao.findUser(email);
         return Response.ok().entity(user).build();
     }
 }
