@@ -6,9 +6,9 @@ import java.util.List;
 @XmlRootElement
 public class User {
 
-    String name;
-    String email;
-    List<String> roles;
+    private String name;
+    private String email;
+    private List<String> roles;
 
     public String getName() {
         return name;

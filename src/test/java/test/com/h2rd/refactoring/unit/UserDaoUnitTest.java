@@ -26,13 +26,10 @@ public class UserDaoUnitTest {
     public void deleteUserTest() {
         userDao = UserDao.getUserDao();
 
-        User user = new User();
-        user.setName("Fake Name");
-        user.setEmail("fake@email.com");
-        user.setRoles(Arrays.asList("admin", "master"));
+        String email= "fake@email.com";
 
         try {
-            userDao.deleteUser(user);
+            userDao.deleteUserByEmail(email);
         } catch (NullPointerException e) {
         }
     }

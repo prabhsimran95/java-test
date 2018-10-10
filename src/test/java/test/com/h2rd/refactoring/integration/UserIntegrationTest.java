@@ -23,7 +23,7 @@ public class UserIntegrationTest {
         integration.setRoles(new ArrayList<String>());
         
         Response response = userResource.addUser(integration.getName(), integration.getEmail(), integration.getRoles());
-        Assert.assertEquals(200, response.getStatus());
+        Assert.assertEquals(201, response.getStatus());
 	}
 
 	@Test
@@ -38,6 +38,6 @@ public class UserIntegrationTest {
         updated.setRoles(new ArrayList<String>());
         
         Response response = userResource.updateUser(updated.getName(), updated.getEmail(), updated.getRoles());
-        Assert.assertEquals(200, response.getStatus());
+        Assert.assertEquals(201, response.getStatus());
 	}
 }

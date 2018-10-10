@@ -27,4 +27,9 @@ public class UserResourceUnitTest {
         Response response = userResource.getUsers();
         Assert.assertEquals(200, response.getStatus());
     }
+    
+    
+    
+    
+    
 }
